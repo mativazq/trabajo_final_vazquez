@@ -41,3 +41,18 @@ class SalaDeleteView(DeleteView):
     model = Sala
     template_name = "bookings/vbc/sala_confirm_delete.html"
     success_url = reverse_lazy("sala-list")
+
+
+class SalaUpdateView(UpdateView):
+    model = Sala
+    template_name = "bookings/vbc/sala_form.html"
+    fields = ["nombre", "disponible", "capacidad"]
+    context_object_name = "sala"
+    success_url = reverse_lazy("sala-list")
+
+
+class SalaCreateView(CreateView):
+    model = Sala
+    template_name = "bookings/vbc/sala_form.html"
+    fields = ["nombre","tipo", "disponible", "capacidad"]
+    success_url = reverse_lazy("sala-list")
