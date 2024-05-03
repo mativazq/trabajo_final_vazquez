@@ -7,17 +7,24 @@ from .views import (
     SalaDeleteView,
     SalaUpdateView,
     SalaCreateView,
+    user_login_view,
+    user_logout_view,
+    UserUpdateView,
+
 )
 
 
 
 
 urlpatterns = [
-    path('', home_view),
+    path('', home_view, name='home'),
     path('sala/list/', SalaListView.as_view(), name='sala-list'),
     path('sala/create/', SalaCreateView.as_view(), name='sala-create'),
     path('sala/<int:pk>/detail/', SalaDetailView.as_view(), name='sala-detail'),
     path('sala/<int:pk>/delete/', SalaDeleteView.as_view(), name='sala-delete'),
     path('sala/<int:pk>/update/', SalaUpdateView.as_view(), name='sala-update'),
+    path("login/", user_login_view, name="login"),
+    path("logout/", user_logout_view, name="logout"),
+    path('editar-perfil/', UserUpdateView.as_view(), name='editar-perfil'),
     
 ]
