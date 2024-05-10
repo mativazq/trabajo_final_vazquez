@@ -13,6 +13,7 @@ from django.views.generic import (
 )
 
 from .models import Sala, Reserva
+from .forms import SalaSearchForm
 
 
 # Create your views here.
